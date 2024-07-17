@@ -1,0 +1,40 @@
+﻿<Window x:Class="PRAKTIKA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRAKTIKA"
+        mc:Ignorable="d"
+               Title="Список" Height="450" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- определяет ряды  для размещения элементов в столбцах-->
+            <RowDefinition Height="Auto"/>
+            <!-- Определяет первый ряд  который будет иметь высоту зависящую от содержимого-->
+            <RowDefinition Height="*"/>
+            <!--Определяет второй ряд занимающии оставшееся пространство -->
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <!--Распологаем элементы-->
+            <TextBox x:Name="ZadacaName" Width="200" Margin="5"/>
+            <ComboBox x:Name="Prioritet" Width="100" Margin="5">
+                <ComboBoxItem Content="Низкой важности"/>
+                <ComboBoxItem Content="Средней важности"/>
+                <ComboBoxItem Content="Важно"/>
+            </ComboBox>
+            <DatePicker x:Name="Deadline" Width="150" Margin="5"/>
+            <!--Элемент для выбора даты-->
+            <Button x:Name="AddZadacaButton" Content="Добавить задачу" Click="AddZadacaButton_Click" Margin="5" Width="150"/>
+            <!--Кнопка для добавления задачи-->
+            <Button x:Name="DeleteZadacaButton" Content="Удалить задачу" Click="DeleteZadacaButton_Click" Margin="5" Width="150"/>
+            <!--Кнопка для удаления заадчи-->
+            <Button x:Name="SdelanoZadacaButton" Content="Задача выполнена" Click="SdelanoZadacaButton_Click" Margin="5" Width="150"/>
+        </StackPanel>
+
+        <ListBox x:Name="ZadacaList" Grid.Row="1" Margin="10" />
+        <!-- Определяет список  который будет размещен во втором ряду-->
+
+
+    </Grid>
+</Window>
